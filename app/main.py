@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 modelsDir = os.getcwd() + "/models"
 
-train = pd.read_csv(modelsDir + "/sample_submission.csv")
+train = pd.read_csv(modelsDir + "/train_features.csv")
 train_label = pd.read_csv(modelsDir + "/train_labels.csv")
 test = pd.read_csv(modelsDir + "/test_features.csv")
 submission = pd.read_csv(modelsDir + "/sample_submission.csv")
