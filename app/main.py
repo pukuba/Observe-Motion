@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import lightgbm as lgb
+# import lightgbm as lgb
 import os
 from sklearn.ensemble import RandomForestClassifier
 
@@ -18,7 +18,7 @@ X_test = test[features].groupby('id').agg(['max', 'min', 'mean'])
 y_train = train_label['label']
 
 model = RandomForestClassifier(n_jobs=-1, random_state=0, min_samples_leaf=30)
-
+model.fit(X_train, y_train)
 y_pred = model.predict_proba(X_test)
 
 submission.iloc[:, 1:] = y_pred
